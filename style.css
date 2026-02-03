@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AP CSA Unit 3 Escape</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>AP CSA Unit 3 Escape</h1>
+    <h2>Class Creation Challenge</h2>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p>
+        Welcome, programmer! You have been pulled into a broken Java project.
+        The only way out is to repair and create classes that behave exactly
+        as specified.
+      </p>
+      <p>
+        Each room will test your understanding of class structure, constructors,
+        instance variables, methods, and encapsulation. Solve the puzzles, collect
+        the code characters, and escape the project.
+      </p>
+    </section>
+
+    <section class="start">
+      <button id="start-btn">Enter Room 1</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AP CSA Unit 3 Escape</p>
+  </footer>
+</body>
+</html>
