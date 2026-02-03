@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Room 2 – Object State</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Room 2: Object State</h1>
+    <h2>Trace the life of a Gadget</h2>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p>
+        You made it into the next part of the project. Now the focus shifts from
+        class blueprints to the <em>state</em> of an object over time.
+      </p>
+      <p>
+        Study how this <code>Gadget</code> object changes as methods are called.
+        Use your understanding of constructors and mutator methods to discover
+        the next secret word.
+      </p>
+    </section>
+
+    <section class="puzzle">
+      <div class="q-block">
+        <h3>The Code Fragment</h3>
+        <p>
+          Consider this class definition (assume it compiles and is already in
+          the project):
+        </p>
+<pre><code>public class Gadget {
+    private String name;
+    private int charge;
+
+    public Gadget(String gadgetName, int startCharge) {
+        name = gadgetName;
+        charge = startCharge;
+    }
+
+    public void setCharge(int newCharge) {
+        charge = newCharge;
+    }
+
+    public void boost(int amount) {
+        charge += amount;
+    }
+
+    public String toString() {
+        return name + " (" + charge + "%)";
+    }
+
+    public int getCharge() {
+        return charge;
+    }
+}</code></pre>
+      </div>
+
+      <div class="q-block">
+        <h3>Question 1</h3>
+        <p>
+          After the following code runs, what is printed?
+        </p>
+<pre><code>Gadget g1 = new Gadget("Lamp", 40);
+System.out.println(g1);</code></pre>
+
+        <div class="q-options">
+          <div class="q-option">
+            <div class="letter-tag">B</div>
+<pre><code>Lamp (0%)</code></pre>
+          </div>
+          <div class="q-option">
+            <div class="letter-tag">L</div>
+<pre><code>Lamp (40%)</code></pre>
+          </div>
+          <div class="q-option">
+            <div class="letter-tag">R</div>
+<pre><code>Lamp (100%)</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <h3>Question 2</h3>
+        <p>
+          Now assume this code runs <strong>after</strong> the previous snippet:
+        </p>
+<pre><code>g1.setCharge(10);
+g1.boost(15);
+System.out.println(g1.getCharge());</code></pre>
+
+        <div class="q-options">
+          <div class="q-option">
+            <div class="letter-tag">I</div>
+<pre><code>10</code></pre>
+          </div>
+          <div class="q-option">
+            <div class="letter-tag">A</div>
+<pre><code>15</code></pre>
+          </div>
+          <div class="q-option">
+            <div class="letter-tag">E</div>
+<pre><code>25</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <h3>Question 3</h3>
+        <p>
+          Reset <code>g1</code> with:
+        </p>
+<pre><code>g1 = new Gadget("Lantern", 60);</code></pre>
+        <p>
+          Then run:
+        </p>
+<pre><code>g1.boost(10);
+g1.boost(-5);
+System.out.println(g1);</code></pre>
+
+        <div class="q-options">
+          <div class="q-option">
+            <div class="letter-tag">G</div>
+<pre><code>Lantern (60%)</code></pre>
+          </div>
+          <div class="q-option">
+            <div class="letter-tag">T</div>
+<pre><code>Lantern (65%)</code></pre>
+          </div>
+          <div class="q-option">
+            <div class="letter-tag">O</div>
+<pre><code>Lantern (70%)</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="q-block">
+        <h3>Question 4</h3>
+        <p>
+          Finally, consider this new object:
+        </p>
+<pre><code>Gadget g2 = new Gadget("Torch", 0);
+g2.boost(30);
+g2.setCharge(5);
+g2.boost(20);
+System.out.println(g2.getCharge());</code></pre>
+
+        <div class="q-options">
+          <div class="q-option">
+            <div class="letter-tag">H</div>
+<pre><code>25</code></pre>
+          </div>
+          <div class="q-option">
+            <div class="letter-tag">D</div>
+<pre><code>50</code></pre>
+          </div>
+          <div class="q-option">
+            <div class="letter-tag">N</div>
+<pre><code>35</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <p>
+        Record the letter from each correct answer in order to form a
+        4-letter password.
+      </p>
+
+      <label for="room2-password">
+        Enter the 4-letter password to proceed:
+      </label>
+      <br />
+      <input
+        type="text"
+        id="room2-password"
+        maxlength="4"
+        placeholder="????"
+        autocomplete="off"
+      />
+      <br />
+      <button id="check-room2-word">Check Password</button>
+      <p id="room2-feedback"></p>
+      <p id="room2-next" class="hidden">
+        Password accepted. <strong>Next room unlocked!</strong>
+      </p>
+    </section>
+
+    <section class="start">
+      <button id="back-btn">Return to Landing Page</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AP CSA Unit 3 Escape</p>
+  </footer>
+</body>
+</html>
