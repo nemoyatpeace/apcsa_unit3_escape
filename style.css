@@ -1,39 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>AP CSA Unit 3 Escape</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header>
-    <h1>AP CSA Unit 3 Escape</h1>
-    <h2>Class Creation Challenge</h2>
-  </header>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
-  <main>
-    <section class="intro">
-      <p>
-        Welcome, programmer! You have been pulled into a broken Java project.
-        The only way out is to repair and create classes that behave exactly
-        as specified.
-      </p>
-      <p>
-        Each room will test your understanding of class structure, constructors,
-        instance variables, methods, and encapsulation. Solve the puzzles, collect
-        the code characters, and escape the project.
-      </p>
-    </section>
+/* True black background, high contrast text */
+body {
+  min-height: 100vh;
+  background-color: #000000;
+  color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+}
 
-    <section class="start">
-      <button id="start-btn">Enter Room 1</button>
-    </section>
-  </main>
+/* Header and footer with subtle color band */
+header,
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(90deg, #0b1020, #182a4d);
+  border-bottom: 1px solid #252b4a;
+}
 
-  <footer>
-    <p>&copy; 2026 AP CSA Unit 3 Escape</p>
-  </footer>
-</body>
-</html>
+footer {
+  border-top: 1px solid #252b4a;
+  border-bottom: none;
+}
+
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+header h2 {
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+  color: #8ad5ff; /* accent color */
+}
+
+/* Centered main content */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+/* Intro card with subtle glow */
+.intro {
+  max-width: 720px;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  padding: 1.5rem 1.75rem;
+  background-color: rgba(15, 20, 40, 0.9);
+  border-radius: 12px;
+  border: 1px solid #252b4a;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.12);
+}
+
+.intro p + p {
+  margin-top: 0.75rem;
+}
+
+/* Start button with teal/cyan accent */
+.start button {
+  padding: 0.85rem 2.1rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  border: 2px solid #21d4fd;
+  background: radial-gradient(circle at 30% 30%, #21d4fd 0, #005b88 40%, #00121f 100%);
+  color: #f8f8f8;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+  box-shadow: 0 0 18px rgba(33, 212, 253, 0.35);
+}
+
+.start button:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.05);
+  box-shadow: 0 0 26px rgba(33, 212, 253, 0.55);
+}
+
+.start button:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 0 14px rgba(33, 212, 253, 0.35);
+}
+
+/* Small text tweak */
+footer p {
+  font-size: 0.85rem;
+  color: #cccccc;
+}
