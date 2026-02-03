@@ -1,222 +1,215 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Room 1 – Class Blueprint</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header>
-    <h1>Room 1: Class Blueprint</h1>
-    <h2>Assemble the password from class pieces</h2>
-  </header>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
 
-  <main>
-    <section class="intro">
-      <p>
-        The project files are shattered into fragments of Java classes. For each
-        fragment, choose the option that correctly matches the specification.
-      </p>
-      <p>
-        Each correct choice reveals a letter. Put the letters together (in
-        question order) to form a 5-letter password that will unlock Room 2.
-      </p>
-    </section>
+/* True black background, high contrast text */
+body {
+  min-height: 100vh;
+  background-color: #000000;
+  color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+}
 
-        <section class="puzzle">
+/* Header and footer with subtle color band */
+header,
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(90deg, #0b1020, #182a4d);
+  border-bottom: 1px solid #252b4a;
+}
 
-      <!-- Question 1 -->
-      <div class="q-block">
-        <h3>Question 1</h3>
-        <p>
-          Choose the class declaration and fields that best match this spec:
-          <em>“A class for a device, named <code>Gadget</code>, with instance
-          variables <code>name</code> (String) and <code>charge</code> (int).”</em>
-        </p>
-        <div class="q-options">
-          <div class="q-option">
-            <p><strong>&lt;A&gt;</strong></p>
-<pre><code>public class gadget {
-    public String name;
-    public int charge;
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;L&gt;</strong></p>
-<pre><code>public class Gadget {
-    private String name;
-    private int charge;
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;Z&gt;</strong></p>
-<pre><code>private class Gadget {
-    private String name;
-    private int charge;
-}</code></pre>
-          </div>
-        </div>
-      </div>
+footer {
+  border-top: 1px solid #252b4a;
+  border-bottom: none;
+}
 
-      <!-- Question 2 -->
-      <div class="q-block">
-        <h3>Question 2</h3>
-        <p>
-          The Gadget spec continues: <em>“The constructor should take a name and
-          an initial charge and initialize both instance variables.”</em>
-          Which constructor matches that behavior?
-        </p>
-        <div class="q-options">
-          <div class="q-option">
-            <p><strong>&lt;I&gt;</strong></p>
-<pre><code>public Gadget(String gadgetName, int startCharge) {
-    name = gadgetName;
-    charge = startCharge;
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;B&gt;</strong></p>
-<pre><code>public Gadget(String name, int charge) {
-    name = name;
-    charge = charge;
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;Q&gt;</strong></p>
-<pre><code>public Gadget(String gadgetName) {
-    name = gadgetName;
-    charge = 0;
-}</code></pre>
-          </div>
-        </div>
-      </div>
+header h1 {
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
-      <!-- Question 3 -->
-      <div class="q-block">
-        <h3>Question 3</h3>
-        <p>
-          The spec: <em>“Provide an accessor method that returns the current
-          charge as an <code>int</code>.”</em> Which method fits that description?
-        </p>
-        <div class="q-options">
-          <div class="q-option">
-            <p><strong>&lt;G&gt;</strong></p>
-<pre><code>public int getCharge() {
-    return charge;
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;R&gt;</strong></p>
-<pre><code>public void getCharge() {
-    System.out.println(charge);
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;M&gt;</strong></p>
-<pre><code>public int getCharge(int extra) {
-    return charge + extra;
-}</code></pre>
-          </div>
-        </div>
-      </div>
+header h2 {
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+  color: #8ad5ff;
+}
 
-      <!-- Question 4 -->
-      <div class="q-block">
-        <h3>Question 4</h3>
-        <p>
-          Now suppose the spec adds: <em>“Provide a mutator that sets the
-          charge to a new value.”</em> Which option is the best match?
-        </p>
-        <div class="q-options">
-          <div class="q-option">
-            <p><strong>&lt;H&gt;</strong></p>
-<pre><code>public void setCharge(int newCharge) {
-    charge = newCharge;
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;S&gt;</strong></p>
-<pre><code>public int setCharge(int newCharge) {
-    return newCharge;
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;K&gt;</strong></p>
-<pre><code>public void charge(int amount) {
-    charge += amount;
-}</code></pre>
-          </div>
-        </div>
-      </div>
+/* Centered main content */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
 
-      <!-- Question 5 -->
-      <div class="q-block">
-        <h3>Question 5</h3>
-        <p>
-          Finally, the spec says: <em>“Add a method that returns a String
-          description containing the name and charge.”</em> Which option aligns
-          best with that idea?
-        </p>
-        <div class="q-options">
-          <div class="q-option">
-            <p><strong>&lt;T&gt;</strong></p>
-<pre><code>public String toString() {
-    return name + " (" + charge + "%)";
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;X&gt;</strong></p>
-<pre><code>public void printInfo() {
-    System.out.println(name + " " + charge);
-}</code></pre>
-          </div>
-          <div class="q-option">
-            <p><strong>&lt;P&gt;</strong></p>
-<pre><code>public String getName() {
-    return name;
-}</code></pre>
-          </div>
-        </div>
-      </div>
+/* Intro card with subtle glow */
+.intro {
+  max-width: 720px;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  padding: 1.5rem 1.75rem;
+  background-color: rgba(15, 20, 40, 0.9);
+  border-radius: 12px;
+  border: 1px solid #252b4a;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.12);
+}
 
-    </section>
+.intro p + p {
+  margin-top: 0.75rem;
+}
 
+/* Landing page start button */
+.start button {
+  padding: 0.85rem 2.1rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  border: 2px solid #21d4fd;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #21d4fd 0,
+    #005b88 40%,
+    #00121f 100%
+  );
+  color: #f8f8f8;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+  box-shadow: 0 0 18px rgba(33, 212, 253, 0.35);
+  margin-top: 1rem;
+}
 
-    <section class="controls">
-      <p>
-        As you answer, record the letter from each correct choice in order to
-        form a 5-letter password.
-      </p>
+.start button:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.05);
+  box-shadow: 0 0 26px rgba(33, 212, 253, 0.55);
+}
 
-      <label for="room1-password">
-        Enter the 5-letter password to unlock Room 2:
-      </label>
-      <br />
-      <input
-        type="text"
-        id="room1-password"
-        maxlength="5"
-        placeholder="?????"
-        autocomplete="off"
-      />
-      <br />
-      <button id="check-room1-word">Check Password</button>
-      <p id="room1-feedback"></p>
-      <p id="room1-next" class="hidden">
-        Password accepted. <strong>Room 2 unlocked!</strong>
-        (In the next step, this will link to Room 2.)
-      </p>
-    </section>
+.start button:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 0 14px rgba(33, 212, 253, 0.35);
+}
 
-    <section class="start">
-      <button id="back-btn">Return to Landing Page</button>
-    </section>
-  </main>
+/* Puzzle layout */
+.puzzle {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 2rem auto;
+}
 
-  <footer>
-    <p>&copy; 2026 AP CSA Unit 3 Escape</p>
-  </footer>
-</body>
-</html>
+/* Each question block */
+.q-block {
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  background-color: rgba(10, 15, 30, 0.9);
+  border-radius: 10px;
+  border: 1px solid #252b4a;
+}
+
+.q-block h3 {
+  margin-bottom: 0.5rem;
+}
+
+.q-block p {
+  margin-bottom: 0.75rem;
+}
+
+/* Options grid within a question */
+.q-options {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+/* Three columns on wider screens */
+@media (min-width: 800px) {
+  .q-options {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Individual option formatting */
+.q-option p {
+  margin-bottom: 0.35rem;
+}
+
+.q-option pre {
+  margin: 0;
+  text-align: left;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}
+
+/* Controls (password area) */
+.controls {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#room1-password {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid #444b6a;
+  background-color: #050812;
+  color: #f8f8f8;
+  text-align: center;
+  letter-spacing: 0.3em;
+  font-size: 1rem;
+  width: 10rem;
+}
+
+#check-room1-word {
+  padding: 0.7rem 1.8rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  border: 2px solid #ffb347;
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffb347 0,
+    #ff7b00 40%,
+    #3a1300 100%
+  );
+  color: #f8f8f8;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+#room1-feedback {
+  min-height: 1.2em;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+#room1-next {
+  color: #8ad5ff;
+  font-weight: 600;
+}
+
+/* Utility */
+.hidden {
+  display: none;
+}
+
+/* Footer */
+footer p {
+  font-size: 0.85rem;
+  color: #cccccc;
+}
