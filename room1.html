@@ -10,18 +10,120 @@
 <body>
   <header>
     <h1>Room 1: Class Blueprint</h1>
-    <h2>Can you identify a valid Java class?</h2>
+    <h2>Choose the class that matches the spec</h2>
   </header>
 
   <main>
     <section class="intro">
       <p>
-        The first lock is guarding the blueprint of a Java class. Only one of
-        these blueprints matches the project specification. Choose correctly
-        to reveal the first character of the escape code.
+        A junior developer tried to implement a <code>Gadget</code> class, but several
+        versions ended up in the codebase. Only one version correctly follows
+        the project specification below.
       </p>
       <p>
-        (We will add the actual class-creation puzzle here next.)
+        Specification:
+        The <code>Gadget</code> class must have two private instance variables
+        (<code>name</code> as a <code>String</code> and <code>charge</code> as an <code>int</code>),
+        a constructor that initializes both, and a <code>getCharge</code> accessor method
+        that returns the current charge.
+      </p>
+      <p>
+        Study each option and select the <strong>one</strong> class that correctly meets
+        the specification.
+      </p>
+    </section>
+
+    <section class="puzzle">
+      <div class="option">
+        <h3>Option A</h3>
+<pre><code>public class Gadget {
+    private String name;
+    private int charge;
+
+    public Gadget(String gadgetName, int startCharge) {
+        name = gadgetName;
+        charge = startCharge;
+    }
+
+    public int getCharge() {
+        return charge;
+    }
+}</code></pre>
+        <label>
+          <input type="radio" name="gadgetOption" value="A">
+          Choose Option A
+        </label>
+      </div>
+
+      <div class="option">
+        <h3>Option B</h3>
+<pre><code>public class Gadget {
+    public String name;
+    public int charge;
+
+    public Gadget(String gadgetName) {
+        name = gadgetName;
+        charge = 0;
+    }
+
+    public void getCharge() {
+        System.out.println(charge);
+    }
+}</code></pre>
+        <label>
+          <input type="radio" name="gadgetOption" value="B">
+          Choose Option B
+        </label>
+      </div>
+
+      <div class="option">
+        <h3>Option C</h3>
+<pre><code>public class Gadget {
+    private String name;
+    private int charge;
+
+    public Gadget(String name, int charge) {
+        name = name;
+        charge = charge;
+    }
+
+    public int getCharge(int extra) {
+        return charge + extra;
+    }
+}</code></pre>
+        <label>
+          <input type="radio" name="gadgetOption" value="C">
+          Choose Option C
+        </label>
+      </div>
+
+      <div class="option">
+        <h3>Option D</h3>
+<pre><code>public class gadget {
+    private String name;
+    private int charge;
+
+    public gadget(String gadgetName, int startCharge) {
+        name = gadgetName;
+        charge = startCharge;
+    }
+
+    public int charge() {
+        return charge;
+    }
+}</code></pre>
+        <label>
+          <input type="radio" name="gadgetOption" value="D">
+          Choose Option D
+        </label>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="check-room1">Check Answer</button>
+      <p id="room1-feedback"></p>
+      <p id="room1-key" class="hidden">
+        Correct! The first character of your escape code is: <strong>G</strong>
       </p>
     </section>
 
