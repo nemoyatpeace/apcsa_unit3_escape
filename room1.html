@@ -25,191 +25,164 @@
       </p>
     </section>
 
-    <section class="puzzle">
+        <section class="puzzle">
 
-      <!-- Question 1: class header + fields -->
-      <div class="option">
+      <!-- Question 1 -->
+      <div class="q-block">
         <h3>Question 1</h3>
         <p>
           Choose the class declaration and fields that best match this spec:
           <em>“A class for a device, named <code>Gadget</code>, with instance
           variables <code>name</code> (String) and <code>charge</code> (int).”</em>
         </p>
-<pre><code>// Which version is best?
-&lt;A&gt; public class gadget {
-        public String name;
-        public int charge;
-    }
-
-&lt;L&gt; public class Gadget {
-        private String name;
-        private int charge;
-    }
-
-&lt;Z&gt; private class Gadget {
-        private String name;
-        private int charge;
-    }</code></pre>
-        <label>
-          <input type="radio" name="q1" value="L">
-          Choose &lt;L&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q1" value="A">
-          Choose &lt;A&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q1" value="Z">
-          Choose &lt;Z&gt;
-        </label>
+        <div class="q-options">
+          <div class="q-option">
+            <p><strong>&lt;A&gt;</strong></p>
+<pre><code>public class gadget {
+    public String name;
+    public int charge;
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;L&gt;</strong></p>
+<pre><code>public class Gadget {
+    private String name;
+    private int charge;
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;Z&gt;</strong></p>
+<pre><code>private class Gadget {
+    private String name;
+    private int charge;
+}</code></pre>
+          </div>
+        </div>
       </div>
 
-      <!-- Question 2: constructor -->
-      <div class="option">
+      <!-- Question 2 -->
+      <div class="q-block">
         <h3>Question 2</h3>
         <p>
           The Gadget spec continues: <em>“The constructor should take a name and
           an initial charge and initialize both instance variables.”</em>
           Which constructor matches that behavior?
         </p>
-<pre><code>// Assume fields: private String name; private int charge;
-
-&lt;I&gt; public Gadget(String gadgetName, int startCharge) {
-        name = gadgetName;
-        charge = startCharge;
-    }
-
-&lt;B&gt; public Gadget(String name, int charge) {
-        name = name;
-        charge = charge;
-    }
-
-&lt;Q&gt; public Gadget(String gadgetName) {
-        name = gadgetName;
-        charge = 0;
-    }</code></pre>
-        <label>
-          <input type="radio" name="q2" value="I">
-          Choose &lt;I&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q2" value="B">
-          Choose &lt;B&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q2" value="Q">
-          Choose &lt;Q&gt;
-        </label>
+        <div class="q-options">
+          <div class="q-option">
+            <p><strong>&lt;I&gt;</strong></p>
+<pre><code>public Gadget(String gadgetName, int startCharge) {
+    name = gadgetName;
+    charge = startCharge;
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;B&gt;</strong></p>
+<pre><code>public Gadget(String name, int charge) {
+    name = name;
+    charge = charge;
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;Q&gt;</strong></p>
+<pre><code>public Gadget(String gadgetName) {
+    name = gadgetName;
+    charge = 0;
+}</code></pre>
+          </div>
+        </div>
       </div>
 
-      <!-- Question 3: accessor -->
-      <div class="option">
+      <!-- Question 3 -->
+      <div class="q-block">
         <h3>Question 3</h3>
         <p>
           The spec: <em>“Provide an accessor method that returns the current
           charge as an <code>int</code>.”</em> Which method fits that description?
         </p>
-<pre><code>&lt;G&gt; public int getCharge() {
-        return charge;
-    }
-
-&lt;R&gt; public void getCharge() {
-        System.out.println(charge);
-    }
-
-&lt;M&gt; public int getCharge(int extra) {
-        return charge + extra;
-    }</code></pre>
-        <label>
-          <input type="radio" name="q3" value="G">
-          Choose &lt;G&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q3" value="R">
-          Choose &lt;R&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q3" value="M">
-          Choose &lt;M&gt;
-        </label>
+        <div class="q-options">
+          <div class="q-option">
+            <p><strong>&lt;G&gt;</strong></p>
+<pre><code>public int getCharge() {
+    return charge;
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;R&gt;</strong></p>
+<pre><code>public void getCharge() {
+    System.out.println(charge);
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;M&gt;</strong></p>
+<pre><code>public int getCharge(int extra) {
+    return charge + extra;
+}</code></pre>
+          </div>
+        </div>
       </div>
 
-      <!-- Question 4: mutator -->
-      <div class="option">
+      <!-- Question 4 -->
+      <div class="q-block">
         <h3>Question 4</h3>
         <p>
           Now suppose the spec adds: <em>“Provide a mutator that sets the
           charge to a new value.”</em> Which option is the best match?
         </p>
-<pre><code>&lt;H&gt; public void setCharge(int newCharge) {
-        charge = newCharge;
-    }
-
-&lt;S&gt; public int setCharge(int newCharge) {
-        return newCharge;
-    }
-
-&lt;K&gt; public void charge(int amount) {
-        charge += amount;
-    }</code></pre>
-        <label>
-          <input type="radio" name="q4" value="H">
-          Choose &lt;H&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q4" value="S">
-          Choose &lt;S&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q4" value="K">
-          Choose &lt;K&gt;
-        </label>
+        <div class="q-options">
+          <div class="q-option">
+            <p><strong>&lt;H&gt;</strong></p>
+<pre><code>public void setCharge(int newCharge) {
+    charge = newCharge;
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;S&gt;</strong></p>
+<pre><code>public int setCharge(int newCharge) {
+    return newCharge;
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;K&gt;</strong></p>
+<pre><code>public void charge(int amount) {
+    charge += amount;
+}</code></pre>
+          </div>
+        </div>
       </div>
 
-      <!-- Question 5: toString / extra method -->
-      <div class="option">
+      <!-- Question 5 -->
+      <div class="q-block">
         <h3>Question 5</h3>
         <p>
           Finally, the spec says: <em>“Add a method that returns a String
           description containing the name and charge.”</em> Which option aligns
           best with that idea?
         </p>
-<pre><code>&lt;T&gt; public String toString() {
-        return name + " (" + charge + "%)";
-    }
-
-&lt;X&gt; public void printInfo() {
-        System.out.println(name + " " + charge);
-    }
-
-&lt;P&gt; public String getName() {
-        return name;
-    }</code></pre>
-        <label>
-          <input type="radio" name="q5" value="T">
-          Choose &lt;T&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q5" value="X">
-          Choose &lt;X&gt;
-        </label>
-        <br />
-        <label>
-          <input type="radio" name="q5" value="P">
-          Choose &lt;P&gt;
-        </label>
+        <div class="q-options">
+          <div class="q-option">
+            <p><strong>&lt;T&gt;</strong></p>
+<pre><code>public String toString() {
+    return name + " (" + charge + "%)";
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;X&gt;</strong></p>
+<pre><code>public void printInfo() {
+    System.out.println(name + " " + charge);
+}</code></pre>
+          </div>
+          <div class="q-option">
+            <p><strong>&lt;P&gt;</strong></p>
+<pre><code>public String getName() {
+    return name;
+}</code></pre>
+          </div>
+        </div>
       </div>
 
     </section>
+
 
     <section class="controls">
       <p>
